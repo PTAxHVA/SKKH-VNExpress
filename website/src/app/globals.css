@@ -1,0 +1,127 @@
+@import "../styles/tokens.css";
+@import "../styles/grain.css";
+@import "tailwindcss";
+
+@theme {
+  --color-bg-base: var(--bg-base);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-bg-surface: var(--bg-surface);
+  --color-bg-surface-hi: var(--bg-surface-hi);
+  --color-ink-primary: var(--ink-primary);
+  --color-ink-secondary: var(--ink-secondary);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-faint: var(--ink-faint);
+  --color-bio: var(--accent-bio);
+  --color-bio-dim: var(--accent-bio-dim);
+  --color-warn: var(--accent-warn);
+  --color-cool: var(--accent-cool);
+  --color-violet: var(--accent-violet);
+  --color-line-subtle: var(--line-subtle);
+  --color-line-strong: var(--line-strong);
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-instrument);
+  --font-mono: var(--font-jetbrains);
+  --text-display: clamp(3rem, 1rem + 7vw, 7.5rem);
+  --text-headline: clamp(2rem, 1rem + 3vw, 3.75rem);
+  --text-title: clamp(1.5rem, 1rem + 1.5vw, 2.25rem);
+  --shadow-glow-bio: 0 0 0 1px oklch(78% 0.18 155 / 0.2), 0 0 32px oklch(78% 0.18 155 / 0.25);
+  --shadow-card-dark: inset 0 1px 0 oklch(100% 0 0 / 0.04), 0 1px 0 oklch(0% 0 0 / 0.4);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--bg-base);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--ink-primary);
+  background:
+    radial-gradient(circle at 90% 8%, oklch(75% 0.14 220 / 0.14), transparent 24rem),
+    linear-gradient(180deg, var(--bg-base), oklch(11% 0.012 240));
+  font-family: var(--font-inter), sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+body[data-theme="light"],
+[data-theme="light"] body {
+  background: var(--bg-base);
+}
+
+::selection {
+  color: oklch(10% 0.02 240);
+  background: var(--accent-bio);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-bio);
+  outline-offset: 4px;
+}
+
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  z-index: 80;
+  transform: translateY(-150%);
+  border-radius: 999px;
+  background: var(--accent-bio);
+  color: oklch(10% 0.02 240);
+  padding: 0.75rem 1rem;
+  transition: transform 150ms var(--ease-out-expo);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.prose-science {
+  color: var(--ink-secondary);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+
+.prose-science h2,
+.prose-science h3 {
+  color: var(--ink-primary);
+}
+
+.prose-science table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.prose-science th,
+.prose-science td {
+  border: 1px solid var(--line-subtle);
+  padding: 0.75rem;
+  text-align: left;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+}
