@@ -1,0 +1,222 @@
+{
+  "window_size": 10,
+  "samples": 480,
+  "train_samples": 360,
+  "test_samples": 120,
+  "controllers": [
+    "fixed",
+    "ai"
+  ],
+  "seeds": 12,
+  "features": [
+    "motorcycle_stopped_count",
+    "motorcycle_moving_count",
+    "car_stopped_count",
+    "car_moving_count"
+  ],
+  "ground_truth_model": {
+    "nonlinear": true,
+    "hidden_variables": [
+      "per-vehicle detailed subtype",
+      "per-vehicle speed",
+      "per-vehicle acceleration",
+      "window-level weather"
+    ],
+    "observed_features": [
+      "observed motorcycle stopped count",
+      "observed motorcycle moving count",
+      "observed car stopped count",
+      "observed car moving count"
+    ]
+  },
+  "measurement_noise": {
+    "count_noise_std": 0.03,
+    "target_noise_std": 0.05,
+    "noise_seed": 2026
+  },
+  "gases": {
+    "co2": {
+      "unit": "g/frame",
+      "ground_truth_rates": {
+        "motorcycle_stopped_count": 8.4,
+        "motorcycle_moving_count": 11.1,
+        "car_stopped_count": 26.8,
+        "car_moving_count": 39.5
+      },
+      "predicted_rates": {
+        "motorcycle_stopped_count": 6.802509840322358,
+        "motorcycle_moving_count": 12.073906546918977,
+        "car_stopped_count": 29.69835008906792,
+        "car_moving_count": 47.577510056101325
+      },
+      "rate_errors": {
+        "motorcycle_stopped_count": {
+          "ground_truth": 8.4,
+          "predicted": 6.802509840322358,
+          "absolute_error": 1.5974901596776423,
+          "relative_error_percent": 19.01773999616241
+        },
+        "motorcycle_moving_count": {
+          "ground_truth": 11.1,
+          "predicted": 12.073906546918977,
+          "absolute_error": 0.9739065469189772,
+          "relative_error_percent": 8.77393285512592
+        },
+        "car_stopped_count": {
+          "ground_truth": 26.8,
+          "predicted": 29.69835008906792,
+          "absolute_error": 2.898350089067918,
+          "relative_error_percent": 10.814739138313127
+        },
+        "car_moving_count": {
+          "ground_truth": 39.5,
+          "predicted": 47.577510056101325,
+          "absolute_error": 8.077510056101325,
+          "relative_error_percent": 20.44939254709196
+        }
+      },
+      "train_metrics_observed": {
+        "mae": 588.1599614444634,
+        "rmse": 765.4983175727383,
+        "r2": 0.9346259543703722
+      },
+      "test_metrics_observed": {
+        "mae": 552.1749921167934,
+        "rmse": 762.4426748562141,
+        "r2": 0.9435584486534999
+      },
+      "train_metrics_ground_truth": {
+        "mae": 287.9525124564311,
+        "rmse": 369.6859340808471,
+        "r2": 0.9845189417170093
+      },
+      "test_metrics_ground_truth": {
+        "mae": 277.2982127306429,
+        "rmse": 354.55587097573726,
+        "r2": 0.9872261795300062
+      }
+    },
+    "co": {
+      "unit": "g/frame",
+      "ground_truth_rates": {
+        "motorcycle_stopped_count": 0.62,
+        "motorcycle_moving_count": 0.78,
+        "car_stopped_count": 1.45,
+        "car_moving_count": 1.95
+      },
+      "predicted_rates": {
+        "motorcycle_stopped_count": 0.7340250003598954,
+        "motorcycle_moving_count": 0.7312189418560839,
+        "car_stopped_count": 1.5367251848320134,
+        "car_moving_count": 2.0365923067352405
+      },
+      "rate_errors": {
+        "motorcycle_stopped_count": {
+          "ground_truth": 0.62,
+          "predicted": 0.7340250003598954,
+          "absolute_error": 0.11402500035989538,
+          "relative_error_percent": 18.391129090305704
+        },
+        "motorcycle_moving_count": {
+          "ground_truth": 0.78,
+          "predicted": 0.7312189418560839,
+          "absolute_error": 0.04878105814391609,
+          "relative_error_percent": 6.253981813322575
+        },
+        "car_stopped_count": {
+          "ground_truth": 1.45,
+          "predicted": 1.5367251848320134,
+          "absolute_error": 0.08672518483201341,
+          "relative_error_percent": 5.9810472297940285
+        },
+        "car_moving_count": {
+          "ground_truth": 1.95,
+          "predicted": 2.0365923067352405,
+          "absolute_error": 0.08659230673524054,
+          "relative_error_percent": 4.44063111462772
+        }
+      },
+      "train_metrics_observed": {
+        "mae": 25.19387541893,
+        "rmse": 32.83081180228745,
+        "r2": 0.9494668512351822
+      },
+      "test_metrics_observed": {
+        "mae": 23.233782504025225,
+        "rmse": 31.715381333168583,
+        "r2": 0.9599608129674506
+      },
+      "train_metrics_ground_truth": {
+        "mae": 9.729705081565157,
+        "rmse": 12.567501657554258,
+        "r2": 0.992441365883085
+      },
+      "test_metrics_ground_truth": {
+        "mae": 10.194048532478837,
+        "rmse": 13.645032575064414,
+        "r2": 0.9923115218391055
+      }
+    },
+    "nox": {
+      "unit": "g/frame",
+      "ground_truth_rates": {
+        "motorcycle_stopped_count": 0.08,
+        "motorcycle_moving_count": 0.11,
+        "car_stopped_count": 0.22,
+        "car_moving_count": 0.34
+      },
+      "predicted_rates": {
+        "motorcycle_stopped_count": 0.0688332670993268,
+        "motorcycle_moving_count": 0.12699642916328802,
+        "car_stopped_count": 0.25365659409162666,
+        "car_moving_count": 0.3990918251268039
+      },
+      "rate_errors": {
+        "motorcycle_stopped_count": {
+          "ground_truth": 0.08,
+          "predicted": 0.0688332670993268,
+          "absolute_error": 0.011166732900673201,
+          "relative_error_percent": 13.958416125841502
+        },
+        "motorcycle_moving_count": {
+          "ground_truth": 0.11,
+          "predicted": 0.12699642916328802,
+          "absolute_error": 0.016996429163288015,
+          "relative_error_percent": 15.451299239352743
+        },
+        "car_stopped_count": {
+          "ground_truth": 0.22,
+          "predicted": 0.25365659409162666,
+          "absolute_error": 0.03365659409162666,
+          "relative_error_percent": 15.298451859830301
+        },
+        "car_moving_count": {
+          "ground_truth": 0.34,
+          "predicted": 0.3990918251268039,
+          "absolute_error": 0.05909182512680389,
+          "relative_error_percent": 17.379948566707025
+        }
+      },
+      "train_metrics_observed": {
+        "mae": 4.813327607896365,
+        "rmse": 6.193603528548447,
+        "r2": 0.9440011594022438
+      },
+      "test_metrics_observed": {
+        "mae": 4.753403751635697,
+        "rmse": 6.108427790139572,
+        "r2": 0.9507114720228427
+      },
+      "train_metrics_ground_truth": {
+        "mae": 2.393907151025486,
+        "rmse": 3.062889049981862,
+        "r2": 0.9857129556078185
+      },
+      "test_metrics_ground_truth": {
+        "mae": 2.2209508558692312,
+        "rmse": 2.822125643948334,
+        "r2": 0.9892412208425543
+      }
+    }
+  }
+}

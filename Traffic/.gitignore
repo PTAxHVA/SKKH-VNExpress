@@ -1,0 +1,14 @@
+.venv-video/
+.venv-sumo/
+__pycache__/
+.DS_Store
+traffic_ai_visualization.html
+traffic_ai_10fps.mp4
+summary.json
+trace.csv
+sumo_summary.json
+sumo_trace.csv
+sumo_visualization.html
+sumo_minimal/
+sumo_tmp/
+vendor/
