@@ -1,0 +1,16 @@
+.DS_Store
+
+# Website local artifacts
+website/node_modules/
+website/.next/
+website/*.tsbuildinfo
+website/.env*
+
+# Traffic local/generated artifacts
+Traffic/vendor/
+Traffic/.venv-*/
+Traffic/sumo_minimal/
+Traffic/__pycache__/
+Traffic/*.html
+Traffic/*_summary.json
+Traffic/*_trace.csv
